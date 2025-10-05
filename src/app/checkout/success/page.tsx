@@ -22,7 +22,7 @@ export default function CheckoutSuccessPage() {
               Your order has been confirmed successfully!
             </p>
             <p className="text-gray-500 mb-8">
-              شكراً لك على اختيار عمق المملكة. سنقوم بمعالجة طلبك وإرساله في أقرب وقت ممكن.
+              شكراً لك على اختيار ألفا  أوإمكيو. سنقوم بمعالجة طلبك وإرساله في أقرب وقت ممكن.
             </p>
 
             {/* Order Details */}
@@ -89,7 +89,7 @@ export default function CheckoutSuccessPage() {
                 هل لديك أسئلة حول طلبك؟
               </p>
               <p className="text-sm text-gray-600">
-                تواصل معنا على: <span className="font-medium text-primary">+966 11 123 4567</span>
+                تواصل معنا على: <span className="font-medium text-primary">+966 53 835 2062</span>
               </p>
             </div>
           </CardContent>

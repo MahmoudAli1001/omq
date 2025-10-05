@@ -11,6 +11,8 @@ export interface Translations {
     contact: string;
     login: string;
     register: string;
+    ourVision: string;
+    ourMission: string;
   };
   
   // Hero Section
@@ -99,10 +101,12 @@ export const translations: Record<Language, Translations> = {
       contact: 'اتصل بنا',
       login: 'تسجيل الدخول',
       register: 'إنشاء حساب',
+      ourVision: 'رؤيتنا',
+      ourMission: 'مهمتنا',
     },
     hero: {
-      title: 'عمق المملكة',
-      subtitle: 'OMQ Kingdom',
+      title: 'ألفا  أوإمكيو',
+      subtitle: 'Alpha OMQ',
       description: 'الشركة الوطنية الرائدة في عمليات الغوص السيادية لحماية البنية التحتية والموارد البحرية للمملكة',
       descriptionEn: 'Leading national company in sovereign diving operations to protect the Kingdom\'s marine infrastructure and resources',
       servicesBtn: 'خدماتنا',
@@ -110,12 +114,12 @@ export const translations: Record<Language, Translations> = {
     },
     vision: {
       title: 'رؤيتنا',
-      description: 'أن تكون الشركة الوطنية الرائدة في عمليات الغوص السيادية لحماية البنية التحتية والموارد البحرية للمملكة.',
+      description: 'مستوحاة من رؤية قيادتنا في المملكة العربية السعودية، أن تكون الشركة الوطنية الرائدة في عمليات الغوص السيادية لضمان أمن واستدامة واعتماد المملكة على نفسها في البنية التحتية والموارد البحرية',
       descriptionEn: 'To be the leading national company in sovereign diving operations to protect the Kingdom\'s marine infrastructure and resources.',
     },
     mission: {
       title: 'مهمتنا',
-      description: 'تقديم خدمات غوص تجارية استثنائية وآمنة ومستدامة، مع تطوير الكفاءات المحلية، والحفاظ على البيئة البحرية.',
+      description: 'مهمتنا هي تقديم خدمات غوص تجارية استثنائية وآمنة ومستدامة لقطاعات الطاقة البحرية والبنية التحتية العامة في المملكة العربية السعودية. نحن ملتزمون بتطوير المواهب المحلية من خلال برامج تدريب صارمة، واستخدام وصيانة أصولنا محلياً، وتمكين أفضل الممارسات التي تقلل من التأثير البيئي لضمان الصحة طويلة الأمد للبيئة البحرية.',
       descriptionEn: 'Providing exceptional, safe and sustainable commercial diving services, while developing local expertise and preserving the marine environment.',
     },
     services: {
@@ -142,7 +146,7 @@ export const translations: Record<Language, Translations> = {
       viewAllServices: 'عرض جميع الخدمات',
     },
     features: {
-      title: 'لماذا تختار عمق المملكة؟',
+      title: 'لماذا تختار ألفا  أوإمكيو؟',
       subtitle: 'Why Choose Kingdom Depth?',
       items: [
         'خدمات آمنة ومستدامة',
@@ -166,7 +170,7 @@ export const translations: Record<Language, Translations> = {
       browseProducts: 'تصفح المنتجات',
     },
     common: {
-      whyChooseUs: 'لماذا تختار عمق المملكة؟',
+      whyChooseUs: 'لماذا تختار ألفا  أوإمكيو؟',
       whyChooseUsEn: 'Why Choose Kingdom Depth?',
       readyToServe: 'مستعدون لخدمتكم',
       readyToServeEn: 'Ready to Serve You',
@@ -182,10 +186,12 @@ export const translations: Record<Language, Translations> = {
       contact: 'Contact',
       login: 'Login',
       register: 'Register',
+      ourVision: 'Our Vision',
+      ourMission: 'Our Mission',
     },
     hero: {
-      title: 'OMQ Kingdom',
-      subtitle: 'عمق المملكة',
+      title: 'Alpha OMQ',
+      subtitle: 'ألفا  أوإمكيو',
       description: 'Leading national company in sovereign diving operations to protect the Kingdom\'s marine infrastructure and resources',
       descriptionEn: 'الشركة الوطنية الرائدة في عمليات الغوص السيادية لحماية البنية التحتية والموارد البحرية للمملكة',
       servicesBtn: 'Our Services',
@@ -193,12 +199,12 @@ export const translations: Record<Language, Translations> = {
     },
     vision: {
       title: 'Our Vision',
-      description: 'To be the leading national company in sovereign diving operations to protect the Kingdom\'s marine infrastructure and resources.',
+      description: 'Inspired by the vision of our leaders in the Kingdom of Saudi Arabia, to be the national leader in sovereign underwater operation, ensuring the security, sustainability and self-reliance of Saudi Arabia\'s marine infrastructure and resources',
       descriptionEn: 'أن تكون الشركة الوطنية الرائدة في عمليات الغوص السيادية لحماية البنية التحتية والموارد البحرية للمملكة.',
     },
     mission: {
       title: 'Our Mission',
-      description: 'Providing exceptional, safe and sustainable commercial diving services, while developing local expertise and preserving the marine environment.',
+      description: 'Our mission is to provide exceptional, safe, and sustainable commercial diving services for Kingdom of Saudi Arabia\'s offshore energy, maritime infrastructure, and public work sectors. We are committed to developing local talent through rigorous training programs, utilizing and maintaining our assets domestically, and empowering best practices that minimize environmental impact to ensure the long-term health of marine environment.',
       descriptionEn: 'تقديم خدمات غوص تجارية استثنائية وآمنة ومستدامة، مع تطوير الكفاءات المحلية، والحفاظ على البيئة البحرية.',
     },
     services: {
@@ -226,7 +232,7 @@ export const translations: Record<Language, Translations> = {
     },
     features: {
       title: 'Why Choose Kingdom Depth?',
-      subtitle: 'لماذا تختار عمق المملكة؟',
+      subtitle: 'لماذا تختار ألفا  أوإمكيو؟',
       items: [
         'Safe and sustainable services',
         'Specialized local expertise',
@@ -250,7 +256,7 @@ export const translations: Record<Language, Translations> = {
     },
     common: {
       whyChooseUs: 'Why Choose Kingdom Depth?',
-      whyChooseUsEn: 'لماذا تختار عمق المملكة؟',
+      whyChooseUsEn: 'لماذا تختار ألفا  أوإمكيو؟',
       readyToServe: 'Ready to Serve You',
       readyToServeEn: 'مستعدون لخدمتكم',
     },

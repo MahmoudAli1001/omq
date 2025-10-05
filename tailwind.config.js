@@ -38,18 +38,18 @@ module.exports = {
           900: "#002217",
         },
         secondary: {
-          DEFAULT: "#005AA7",
+          DEFAULT: "#15235c", // update this value as needed
           foreground: "#FFFFFF",
-          50: "#E6F0F7",
-          100: "#CCE1EF",
-          200: "#99C3DF",
-          300: "#66A5CF",
-          400: "#3387BF",
-          500: "#005AA7",
-          600: "#004886",
-          700: "#003665",
-          800: "#002444",
-          900: "#001223",
+          50: "#e7eaf3",
+          100: "#cfd5e7",
+          200: "#9faacF",
+          300: "#6f80b7",
+          400: "#3f559f",
+          500: "#15235c", // update this value as needed
+          600: "#111b49",
+          700: "#0d1436",
+          800: "#080c23",
+          900: "#040611",
         },
         accent: {
           DEFAULT: "#B9EAF2",
@@ -106,10 +106,10 @@ module.exports = {
         'inter': ['Inter', 'sans-serif'],
       },
       backgroundImage: {
-        'gradient-ocean': 'linear-gradient(135deg, #00A66F 0%, #005AA7 100%)',
+        'gradient-ocean': 'linear-gradient(135deg, #00A66F 0%, #15235c 100%)', // update here if needed
         'gradient-bubbles': 'radial-gradient(circle at 20% 50%, #B9EAF2 0%, transparent 50%), radial-gradient(circle at 80% 20%, #B9EAF2 0%, transparent 50%), radial-gradient(circle at 40% 80%, #B9EAF2 0%, transparent 50%)',
-        'gradient-brand': 'linear-gradient(135deg, #00A66F 0%, #005AA7 100%)',
-        'gradient-hero': 'linear-gradient(135deg, #00A66F 0%, #009245 50%, #005AA7 100%)',
+        'gradient-brand': 'linear-gradient(135deg, #00A66F 0%, #15235c 100%)', // update here if needed
+        'gradient-hero': 'linear-gradient(135deg, #00A66F 0%, #009245 50%, #15235c 100%)', // update here if needed
         'gradient-card': 'linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
       },
     },

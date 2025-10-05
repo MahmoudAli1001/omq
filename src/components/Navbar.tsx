@@ -15,6 +15,8 @@ import { Menu, X, ShoppingCart, User, Globe } from 'lucide-react'
 import { useCart } from '@/hooks/use-cart'
 import OMQLogoImage from '@/components/OMQLogoImage'
 import { useLanguage } from '@/contexts/LanguageContext'
+import Image from 'next/image'
+import Dropdown from './Dropdown'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -36,40 +38,63 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20  rounded-lg">
           {/* Logo */}
-              <OMQLogoImage size="md" language={language} />
-          <div className="flex-shrink-0 m-2">
-            <Link href="/" className="flex m-2 p-6 rounded-lg">
-             
-            </Link>
+              {/* <OMQLogoImage size="md" language={language} /> */}
+              <div className="
+    cursor-pointer
+    rounded-lg">
+                             <Image src={language === 'ar' ? '/logo-ar.png' : '/logo-en.png'} alt="OMQ" className='rounded-lg' width={80} height={100} />
+                            </div>
+            {/* <Link href="/" className=" rounded-lg">
+              <Image
+                     src={language === 'ar' ? '/logo-ar.png' : '/logo-en.png'}
+                     alt={language === 'ar' ? 'ألفا  أوإمكيو' : 'Kingdom Depth'}
+                     fill
+                     className="object-contain   rounded-lg block w-full h-full"
+                     priority
+                     style={{ width: '100%', height: '100%' ,
+                         objectFit: 'contain',
+                         borderRadius: '10px'
+                     }}
+                    />
+            </Link> */}
+          <div className=" m-2">
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline font-cairo gap-2 text-center rtl:space-x-reverse">
-              {navigation.map((item) => (
-                <Link
+              {navigation.map((item) => {
+                const currentItem=item.name
+                if(currentItem===t.nav.about){
+                  return (
+                    <Dropdown key={item.href} />
+                  )
+
+                  
+                }
+                return (<Link
                   key={item.href}
                   href={item.href}
                   className={`px-6 py-2 rounded-lg font-cairo text-sm font-medium transition-all duration-500 ${
                     pathname === item.href
-                      ? 'bg-gradient-to-b from-[#22994d] via-[#0db56c] to-[#2e558d] text-white shadow-md'
-                      : 'text-[#22994d] hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:text-primary'
+                      ? 'bg-gradient-to-b from-[#12255b] via-[#29d4ed] to-[#2e558d] text-white shadow-md'
+                      : 'text-[#12255b] hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:text-primary'
                   }`}
                 >
                   {item.name}
-                </Link>
-              ))}
+                </Link>)
+              })}
             </div>
           </div>
 
           {/* Right side actions */}
-          <div className="flex items-center space-x-4 rtl:space-x-reverse">
+          <div className="flex items-center space-x-4 text-[#15235c] rtl:space-x-reverse">
             {/* Language Toggle */}
             <Button
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="flex items-center space-x-1 rtl:space-x-reverse"
+              className="flex items-center text-[#15235c] space-x-1 rtl:space-x-reverse"
             >
               <Globe className="w-4 h-4" />
               <span className="text-sm font-medium">

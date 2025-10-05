@@ -49,7 +49,7 @@ export default function Home() {
         {/* Liquid Chrome Background */}
         <div className="absolute inset-0">
           <LiquidChrome
-            baseColor={[0.0, 0.65, 0.44]} // Brand green #00A66F
+            baseColor={[0.0, 0.35, 0.65]} // Sea blue
             speed={0.5}
             amplitude={0.4}
             frequencyX={2}
@@ -61,17 +61,38 @@ export default function Home() {
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/20"></div>
         
-        {/* Floating Bubbles Animation */}
+        {/* Floating Bubbles Animation - Using fixed positions to prevent hydration errors */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
+          {[
+            { left: 10, top: 20, delay: 0.5, duration: 3.2 },
+            { left: 80, top: 15, delay: 1.2, duration: 4.1 },
+            { left: 25, top: 60, delay: 2.1, duration: 3.8 },
+            { left: 65, top: 80, delay: 0.8, duration: 3.5 },
+            { left: 90, top: 40, delay: 1.8, duration: 4.2 },
+            { left: 15, top: 85, delay: 0.3, duration: 3.9 },
+            { left: 75, top: 25, delay: 2.5, duration: 3.6 },
+            { left: 40, top: 70, delay: 1.5, duration: 4.0 },
+            { left: 95, top: 10, delay: 0.7, duration: 3.7 },
+            { left: 5, top: 95, delay: 2.2, duration: 3.4 },
+            { left: 55, top: 45, delay: 1.1, duration: 4.3 },
+            { left: 85, top: 75, delay: 0.9, duration: 3.3 },
+            { left: 30, top: 30, delay: 2.8, duration: 4.4 },
+            { left: 70, top: 65, delay: 0.4, duration: 3.1 },
+            { left: 20, top: 50, delay: 1.9, duration: 3.8 },
+            { left: 60, top: 35, delay: 2.6, duration: 4.1 },
+            { left: 45, top: 85, delay: 0.6, duration: 3.5 },
+            { left: 12, top: 75, delay: 1.7, duration: 4.2 },
+            { left: 88, top: 55, delay: 2.3, duration: 3.9 },
+            { left: 35, top: 15, delay: 1.4, duration: 3.6 }
+          ].map((bubble, i) => (
             <div
               key={i}
-              className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
+              className="absolute w-4 h-4 bg-white/20 rounded-full animate-bounce"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${3 + Math.random() * 2}s`
+                left: `${bubble.left}%`,
+                top: `${bubble.top}%`,
+                animationDelay: `${bubble.delay}s`,
+                animationDuration: `${bubble.duration}s`
               }}
             />
           ))}
@@ -96,7 +117,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-b from-[#22994d] via-[#0db56c] to-[#2e558d] hover:to-[#0C3C78] text-white px-24 py-4 rounded-lg text-lg font-cairo font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-white hover:bg-white hover:text-[#12255b] backdrop-blur-lg border px-24 py-4 rounded-lg text-lg font-cairo font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                 asChild
               >
                 <Link href="/contact">
@@ -107,7 +128,7 @@ export default function Home() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className=" backdrop-blur-lg text-white hover:bg-white hover:text-[#00A66F] px-24 py-4 rounded-lg text-lg font-cairo font-semibold transition-all duration-300"
+                className=" backdrop-blur-lg text-white hover:bg-white hover:text-[#12255b] px-24 py-4 rounded-lg text-lg font-cairo font-semibold transition-all duration-300"
                 asChild
               >
                 <Link href="/services">
@@ -120,12 +141,12 @@ export default function Home() {
       </section>
 
       {/* Vision & Mission Section */}
-      <section className="py-20 bg-gradient-to-br from-[#00A66F]/5 to-[#005AA7]/5">
+      <section className="py-20 bg-gradient-to-br bg-[#eaf2f02a] from-[#00A66F]/5 to-[#005AA7]/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl md:text-4xl font-cairo font-bold text-[#00A66F] mb-4">
+                <h2 className="text-3xl md:text-4xl font-cairo font-bold text-[#12255b] mb-4">
                   {t.vision.title}
                 </h2>
                 <p className="text-lg text-gray-700 font-cairo leading-relaxed">
@@ -134,7 +155,7 @@ export default function Home() {
               </div>
               
               <div>
-                <h2 className="text-3xl md:text-4xl font-cairo font-bold text-[#005AA7] mb-4">
+                <h2 className="text-3xl md:text-4xl font-cairo font-bold text-[#12255b] mb-4">
                   {t.mission.title}
                 </h2>
                 <p className="text-lg text-gray-700 font-cairo leading-relaxed">
@@ -144,7 +165,7 @@ export default function Home() {
             </div>
             
             <div className="relative">
-              <div className="bg-gradient-to-br from-[#00A66F] to-[#005AA7] rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-l from-[#12255b] via-[#29d4ed] to-[#2e558d] rounded-2xl p-8 text-white">
                 <div className="text-center">
                   <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Anchor className="w-12 h-12 text-white" />
@@ -162,15 +183,19 @@ export default function Home() {
         </div>
       </section>
       {/* Services Section */}
-      <section className=" bg-white relative">
-        <div className=" w-full bg-[#f9fafb] relative">
+      <section className=" bg-white relative"
+      
+    
+      >
+        <div className=" w-full  relative">
+          <Image src="/waves.svg" alt="Waves" fill className="object-cover" />
           {/* Diagonal Fade Grid Background - Top Left */}
-          <div
+          {/* <div
             className="absolute inset-0 z-0"
             style={{
               backgroundImage: `
                 linear-gradient(to right,#0059a7b2 0.5px, transparent 1px),
-                linear-gradient(to bottom,#00a66fb6 0.5px, transparent 1px)
+                linear-gradient(to bottom,#2ad3ec 0.5px, transparent 1px)
               `,
               backgroundSize: "32px 32px",
               WebkitMaskImage:
@@ -178,25 +203,25 @@ export default function Home() {
               maskImage:
                 "radial-gradient(ellipse 80% 80% at 0% 0%, #000 50%, transparent 90%)",
             }}
-          />
+          /> */}
           
           {/* Content */}
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="text-center mb-16 backdrop-blur-md py-1 rounded-lg px-2 gradient-to-r  w-fit">
-              <h2 className="text-4xl md:text-5xl  font-cairo font-bold text-[#00A66F] mb-6">
+              <h2 className="text-4xl md:text-5xl  font-cairo font-bold text-white mb-6">
                 {t.services.title}
               </h2>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-gray-50 relative z-20">
+                <Card key={index} className="group hover:shadow-xl transition-all duration-300 border border-[#1b5a99] backdrop-blur-2xl text-white z-20">
                   <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#00A66F] to-[#005AA7] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#12255b] to-[#2ad3ec] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
                     
-                    <h3 className="text-2xl font-cairo font-bold text-gray-900 mb-4">
+                    <h3 className="text-2xl font-cairo font-bold  mb-4">
                       {language === 'ar' ? service.title : service.titleEn}
                     </h3>
                     
@@ -206,7 +231,7 @@ export default function Home() {
                     
                     <Button 
                       variant="outline" 
-                      className="border-[#00A66F] backdrop-blur-lg transition-all duration-500 rounded-lg text-[#00A66F] hover:bg-[#00A66F] hover:text-white font-cairo"
+                      className="border-[#26b3d2] backdrop-blur-lg transition-all duration-500 rounded-lg  bg-[#26b3d257] text-white font-cairo"
                       asChild
                     >
                       <Link href="/services">
@@ -221,12 +246,12 @@ export default function Home() {
         </div>
       </section>
       {/* Why Choose OMQ Section */}
-      <section className="bg-gray-50">
+      <section>
         <div className="max-w-5xl px-4 xl:px-0 py-10 lg:pt-20 lg:pb-20 mx-auto">
           {/* Title */}
           <div className="max-w-3xl mb-10 lg:mb-14">
-            <h2 className="text-4xl md:text-5xl  font-cairo font-bold font-cairo text-[#00A66F] md:leading-tight">
-              {language === 'ar' ? 'لماذا تختار عمق المملكة؟' : 'Why Choose Kingdom Depth?'}
+            <h2 className="text-4xl md:text-5xl  font-cairo font-bold font-cairo text-[#12255b] md:leading-tight">
+              {language === 'ar' ? 'لماذا تختار ألفا  أوإمكيو؟' : 'Why Choose Kingdom Depth?'}
             </h2>
             <p className="mt-1 text-neutral-400 font-cairo">
               {language === 'ar' 
@@ -242,7 +267,7 @@ export default function Home() {
             <div className="aspect-w-16 aspect-h-9 lg:aspect-none shadow-lg rounded-xl overflow-hidden shadow-[#0059a723]">
           <Image
                 className="w-full object-cover rounded-xl" 
-                src="/feature.png" 
+                src={language === "ar" ? '/logo-ar.png' : '/logo-en.png'} 
                 alt={language === 'ar' ? 'خدمات الغوص التجاري' : 'Commercial Diving Services'}
                 width={480}
                 height={600}
@@ -254,7 +279,7 @@ export default function Home() {
             <div>
               {/* Heading */}
               <div className="mb-4">
-                <h3 className=" bg-gradient-to-r from-[#00A66F] to-[#005AA7] w-fit px-4 py-2 rounded-lg text-white text-xs font-medium uppercase font-cairo">
+                <h3 className=" bg-gradient-to-b from-[#12255b] via-[#29d4ed] to-[#2e558d] w-fit px-4 py-2 rounded-lg text-white text-xs font-medium uppercase font-cairo">
                   {language === 'ar' ? 'مميزاتنا' : 'Our Advantages'}
                 </h3>
               </div>
@@ -265,7 +290,7 @@ export default function Home() {
                 {/* Icon */}
                 <div className="relative last:after:hidden after:bg-[#005AA7] after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] ">
                   <div className="relative z-10 size-8 flex justify-center items-center">
-                    <span className="flex shrink-0 justify-center items-center size-8 border border-[#005AA7] text-[#00A66F] font-semibold text-xs uppercase rounded-full">
+                    <span className="flex shrink-0 justify-center items-center size-8 border border-[#005AA7] text-[#0064a6] font-semibold text-xs uppercase rounded-full">
                       1
                     </span>
                   </div>
@@ -294,7 +319,7 @@ export default function Home() {
                 {/* Icon */}
                 <div className="relative last:after:hidden after:bg-[#005AA7] after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] ">
                   <div className="relative z-10 size-8 flex justify-center items-center">
-                    <span className="flex shrink-0 justify-center items-center size-8 border border-[#005AA7] text-[#00A66F] font-semibold text-xs uppercase rounded-full">
+                    <span className="flex shrink-0 justify-center items-center size-8 border border-[#005AA7] text-[#0064a6] font-semibold text-xs uppercase rounded-full">
                       2
                     </span>
                   </div>
@@ -323,7 +348,7 @@ export default function Home() {
                 {/* Icon */}
                 <div className="relative last:after:hidden after:bg-[#005AA7] after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] ">
                   <div className="relative z-10 size-8 flex justify-center items-center">
-                    <span className="flex shrink-0 justify-center items-center size-8 border border-[#005AA7] text-[#00A66F] font-semibold text-xs uppercase rounded-full">
+                    <span className="flex shrink-0 justify-center items-center size-8 border border-[#005AA7] text-[#0064a6] font-semibold text-xs uppercase rounded-full">
                       3
                     </span>
                   </div>
@@ -352,7 +377,7 @@ export default function Home() {
                 {/* Icon */}
                 <div className="relative last:after:hidden after:bg-[#005AA7] after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] ">
                   <div className="relative z-10 size-8 flex justify-center items-center">
-                    <span className="flex shrink-0 justify-center items-center size-8 border border-[#005AA7] text-[#00A66F] font-semibold text-xs uppercase rounded-full">
+                    <span className="flex shrink-0 justify-center items-center size-8 border border-[#005AA7] text-[#0064a6] font-semibold text-xs uppercase rounded-full">
                       4
                     </span>
                   </div>
@@ -377,7 +402,7 @@ export default function Home() {
               {/* End Item */}
 
               <Link 
-                className="group inline-flex items-center gap-x-2 py-2 px-3 bg-gradient-to-r from-[#00A66F] to-[#005AA7] font-medium text-sm text-white rounded-lg focus:outline-hidden transition-colors duration-300 font-cairo" 
+                className="group inline-flex items-center gap-x-2 py-2 px-3  bg-gradient-to-b from-[#12255b] via-[#29d4ed] to-[#2e558d] font-medium text-sm text-white rounded-lg focus:outline-hidden transition-colors duration-300 font-cairo" 
                 href="/contact"
               >
                 {language === 'ar' ? 'تواصل معنا' : 'Contact Us'}
@@ -391,18 +416,17 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#00A66F] to-[#005AA7]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-cairo font-bold text-white mb-6">
+      <section className="pt-20 pb-0 mb-[-4rem] text-[#12295f]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 p-0 m-0 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-cairo font-bold  mb-6">
             {t.cta.title}
           </h2>
           
-         
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col p-0 m-0 sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-white rounded-lg text-[#00A66F] hover:bg-gray-100 px-12 py-4 text-lg font-cairo font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-lg text-[#12295f] hover:bg-gray-100 px-12 py-4 text-lg font-cairo font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               asChild
             >
               <Link href="/contact">
@@ -414,7 +438,7 @@ export default function Home() {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 rounded-lg border-white trandsitions-all  text-white hover:bg-white hover:text-[#00A66F] px-8 py-4 text-lg font-cairo font-semibold transition-all duration-300"
+              className="border-2 rounded-lg border-[#12295f] transitions-all  text-[#12295f] hover:bg-white hover:text-[#12295f] px-8 py-4 text-lg font-cairo font-semibold transition-all duration-300"
               asChild
             >
               <Link href="/products" className="flex items-center gap-3">
@@ -424,6 +448,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#011129" fillOpacity="1" d="M0,224L40,202.7C80,181,160,139,240,133.3C320,128,400,160,480,181.3C560,203,640,213,720,229.3C800,245,880,267,960,240C1040,213,1120,139,1200,101.3C1280,64,1360,64,1400,64L1440,64L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
       </section>
     </div>
   )

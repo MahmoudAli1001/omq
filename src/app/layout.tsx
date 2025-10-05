@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "عمق المملكة - Kingdom Depth | OMQ",
+  title: "ألفا  أوإمكيو - Alpha OMQ",
   description: "الشركة الوطنية الرائدة في عمليات الغوص السيادية لحماية البنية التحتية والموارد البحرية للمملكة",
   keywords: "غوص تجاري, دعم بحري, بنية تحتية بحرية, المملكة العربية السعودية",
 };

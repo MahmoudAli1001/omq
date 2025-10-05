@@ -46,15 +46,15 @@ export default function Footer() {
   const contactInfo = [
     {
       icon: Phone,
-      text: '+966 11 123 4567',
-      textEn: '+966 11 123 4567',
+      text: '+966 53 835 2062',
+      textEn: '+966 53 835 2062',
       href: 'tel:+966111234567'
     },
     {
       icon: Mail,
-      text: 'info@omq.com.sa',
-      textEn: 'info@omq.com.sa',
-      href: 'mailto:info@omq.com.sa'
+      text: 'info@alphaomq.sa',
+      textEn: 'info@alphaomq.sa',
+      href: 'mailto:info@alphaomq.sa'
     },
     {
       icon: MapPin,
@@ -72,7 +72,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className=" bg-gradient-to-r from-[#00A66F] to-[#005AA7] text-white relative overflow-hidden">
+    <footer className=" bg-[#011129] pt-0 mt-0 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-20 h-20 border border-white/20 rounded-full"></div>
@@ -90,7 +90,7 @@ export default function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-               <Image src="/logo-ar-trans.png" alt="OMQ" width={250} height={250} />
+               <Image src={language === 'ar' ? '/logo-ar.png' : '/logo-en.png'} alt="OMQ" className='rounded-lg' width={250} height={250} />
               </div>
               
               <p className="text-white/90 font-cairo leading-relaxed mb-6">
@@ -101,7 +101,7 @@ export default function Footer() {
               </p>
 
               {/* Contact Info */}
-              <div className="space-y-3">
+              <div className="space-y-3" dir={language === 'ar' ? 'rtl' : 'ltr'}>
                 {contactInfo.map((contact, index) => (
                   <a
                     key={index}
@@ -198,35 +198,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div className="border-t border-white/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-cairo font-bold mb-4 text-white">
-                  {language === 'ar' ? 'اشترك في نشرتنا الإخبارية' : 'Subscribe to Our Newsletter'}
-                </h3>
-                <p className="text-white/80 font-cairo mb-6">
-                  {language === 'ar' 
-                    ? 'احصل على آخر الأخبار والتحديثات حول خدماتنا البحرية'
-                    : 'Get the latest news and updates about our marine services'
-                  }
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                  <input
-                    type="email"
-                    placeholder={language === 'ar' ? 'أدخل بريدك الإلكتروني' : 'Enter your email'}
-                    className="flex-1 px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60 font-cairo focus:outline-none focus:ring-2 focus:ring-[#B9EAF2] focus:border-transparent"
-                  />
-                  <button className="px-6 py-3 bg-gradient-to-r from-[#00A66F] to-[#005AA7] hover:from-[#009245] hover:to-[#0C3C78] text-white font-cairo font-semibold rounded-lg transition-all duration-300 hover:shadow-lg">
-                    {language === 'ar' ? 'اشتراك' : 'Subscribe'}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+     
 
         {/* Bottom Section */}
         <div className="border-t border-white/20">
@@ -235,7 +207,7 @@ export default function Footer() {
               
               {/* Copyright */}
               <div className="text-white/80 font-cairo text-sm mb-4 md:mb-0">
-                © {currentYear} {language === 'ar' ? 'عمق المملكة' : 'Kingdom Depth'}. 
+                © {currentYear} {language === 'ar' ? 'ألفا  أوإمكيو' : 'Kingdom Depth'}. 
                 {language === 'ar' ? ' جميع الحقوق محفوظة' : ' All rights reserved'}
               </div>
 

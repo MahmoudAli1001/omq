@@ -22,23 +22,23 @@ export const OMQLogoImage: React.FC<OMQLogoImageProps> = ({
     xxxxl: 'w-32 h-32'
   };
 
-  const logoSrc = language === 'ar' ? '/logo-ar-trans.png' : '/logo-en-trans.png';
+  const logoSrc = language === 'ar' ? '/logo-ar.png' : '/logo-en.png';
 
   return (
-    <div className={`w-40 h-16 ${className} relative
+    <div className={`w-56 h-18 ${className} relative
     cursor-pointer
     rounded-lg
-    bg-gradient-to-b font-cairo from-[#22994d] via-[#0db56c] to-[#2e558d] 
+   
     `}>
       <Image
         src={logoSrc}
-        alt={language === 'ar' ? 'عمق المملكة' : 'Kingdom Depth'}
+        alt={language === 'ar' ? 'ألفا  أوإمكيو' : 'Kingdom Depth'}
         fill
         className="object-contain   rounded-lg block w-full h-full"
         priority
         style={{ width: '100%', height: '100%' ,
             objectFit: 'contain',
-            borderRadius: '10px'
+            borderRadius: '20px'
         }}
       />
     </div>
