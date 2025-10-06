@@ -116,12 +116,16 @@ export default function Footer() {
                   <a
                     key={index}
                     href={contact.href}
-                    className="flex items-center space-x-3 rtl:space-x-reverse text-white/80 hover:text-white transition-colors duration-300"
+                    className="flex items-center gap-3  text-white/80 hover:text-white transition-colors duration-300"
                   >
                     <contact.icon className="w-5 h-5 text-[#B9EAF2]" />
                     <span
                       className="font-cairo text-sm"
-                      dir={language === "ar" ? "rtl" : "ltr"}
+                      dir={
+                        language === "ar" && contact.text !== "+966 53 835 2062"
+                          ? "rtl"
+                          : "ltr"
+                      }
                     >
                       {language === "ar" ? contact.text : contact.textEn}
                     </span>
@@ -194,12 +198,15 @@ export default function Footer() {
                 <h4 className="text-lg font-cairo font-semibold mb-4 text-white">
                   {language === "ar" ? "تابعنا" : "Follow Us"}
                 </h4>
-                <div className="flex space-x-4 rtl:space-x-reverse">
+                <div
+                  className="flex gap-4"
+                  dir={language === "ar" ? "rtl" : "ltr"}
+                >
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
                       href={social.href}
-                      className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                      className="w-10 h-10 bg-white/10  hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                       aria-label={social.label}
                     >
                       <social.icon className="w-5 h-5 text-white" />
