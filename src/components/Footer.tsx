@@ -1,75 +1,78 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { useLanguage } from '@/contexts/LanguageContext'
-import { OMQLogoImage } from '@/components/OMQLogoImage'
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Facebook, 
-  Twitter, 
-  Instagram, 
+import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { OMQLogoImage } from "@/components/OMQLogoImage";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
   Linkedin,
   Anchor,
   Shield,
-  Waves
-} from 'lucide-react'
-import Image from 'next/image'
+  Waves,
+} from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
-  const { language, t } = useLanguage()
+  const { language, t } = useLanguage();
 
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     company: [
-      { name: t.nav.about, href: '/about' },
-      { name: t.nav.services, href: '/services' },
-      { name: t.nav.products, href: '/products' },
-      { name: t.nav.partners, href: '/partners' },
+      { name: t.nav.about, href: "/about" },
+      { name: t.nav.services, href: "/services" },
+      { name: t.nav.products, href: "/products" },
+      { name: t.nav.partners, href: "/partners" },
     ],
     support: [
-      { name: t.nav.contact, href: '/contact' },
-      { name: 'سياسة الخصوصية', href: '/privacy' },
-      { name: 'شروط الاستخدام', href: '/terms' },
-      { name: 'الأسئلة الشائعة', href: '/faq' },
+      { name: t.nav.contact, href: "/contact" },
+      { name: "سياسة الخصوصية", href: "/privacy" },
+      { name: "شروط الاستخدام", href: "/terms" },
+      { name: "الأسئلة الشائعة", href: "/faq" },
     ],
     services: [
-      { name: 'الغوص التجاري', href: '/services/commercial-diving' },
-      { name: 'الدعم البحري', href: '/services/offshore-support' },
-      { name: 'البنية التحتية البحرية', href: '/services/marine-infrastructure' },
-      { name: 'الاستشارات البحرية', href: '/services/marine-consulting' },
-    ]
-  }
+      { name: "الغوص التجاري", href: "/services/commercial-diving" },
+      { name: "الدعم البحري", href: "/services/offshore-support" },
+      {
+        name: "البنية التحتية البحرية",
+        href: "/services/marine-infrastructure",
+      },
+      { name: "الاستشارات البحرية", href: "/services/marine-consulting" },
+    ],
+  };
 
   const contactInfo = [
     {
       icon: Phone,
-      text: '+966 53 835 2062',
-      textEn: '+966 53 835 2062',
-      href: 'tel:+966111234567'
+      text: "+966 53 835 2062",
+      textEn: "+966 53 835 2062",
+      href: "tel:+966111234567",
     },
     {
       icon: Mail,
-      text: 'info@alphaomq.sa',
-      textEn: 'info@alphaomq.sa',
-      href: 'mailto:info@alphaomq.sa'
+      text: "info@alphaomq.sa",
+      textEn: "info@alphaomq.sa",
+      href: "mailto:info@alphaomq.sa",
     },
     {
       icon: MapPin,
-      text: 'الرياض، المملكة العربية السعودية',
-      textEn: 'Riyadh, Saudi Arabia',
-      href: '#'
-    }
-  ]
+      text: "الرياض، المملكة العربية السعودية",
+      textEn: "Riyadh, Saudi Arabia",
+      href: "#",
+    },
+  ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  ]
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+  ];
 
   return (
     <footer className=" bg-[#011129] pt-0 mt-0 text-white relative overflow-hidden">
@@ -86,22 +89,29 @@ export default function Footer() {
         {/* Top Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-               <Image src={language === 'ar' ? '/logo-ar.png' : '/logo-en.png'} alt="OMQ" className='rounded-lg' width={250} height={250} />
+                <Image
+                  src={language === "ar" ? "/logo-ar.png" : "/logo-en.png"}
+                  alt="OMQ"
+                  className="rounded-lg"
+                  width={250}
+                  height={250}
+                />
               </div>
-              
+
               <p className="text-white/90 font-cairo leading-relaxed mb-6">
-                {language === 'ar' 
-                  ? 'الشركة الوطنية الرائدة في عمليات الغوص السيادية لحماية البنية التحتية والموارد البحرية للمملكة'
-                  : 'The leading national company in sovereign diving operations to protect the Kingdom\'s marine infrastructure and resources'
-                }
+                {language === "ar"
+                  ? "الشركة الوطنية الرائدة في عمليات الغوص السيادية لحماية البنية التحتية والموارد البحرية للمملكة"
+                  : "The leading national company in sovereign diving operations to protect the Kingdom's marine infrastructure and resources"}
               </p>
 
               {/* Contact Info */}
-              <div className="space-y-3" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+              <div
+                className="space-y-3"
+                dir={language === "ar" ? "rtl" : "ltr"}
+              >
                 {contactInfo.map((contact, index) => (
                   <a
                     key={index}
@@ -109,8 +119,11 @@ export default function Footer() {
                     className="flex items-center space-x-3 rtl:space-x-reverse text-white/80 hover:text-white transition-colors duration-300"
                   >
                     <contact.icon className="w-5 h-5 text-[#B9EAF2]" />
-                    <span className="font-cairo text-sm">
-                      {language === 'ar' ? contact.text : contact.textEn}
+                    <span
+                      className="font-cairo text-sm"
+                      dir={language === "ar" ? "rtl" : "ltr"}
+                    >
+                      {language === "ar" ? contact.text : contact.textEn}
                     </span>
                   </a>
                 ))}
@@ -120,7 +133,7 @@ export default function Footer() {
             {/* Quick Links */}
             <div>
               <h3 className="text-xl font-cairo font-bold mb-6 text-white">
-                {language === 'ar' ? 'روابط سريعة' : 'Quick Links'}
+                {language === "ar" ? "روابط سريعة" : "Quick Links"}
               </h3>
               <ul className="space-y-3">
                 {footerLinks.company.map((link, index) => (
@@ -140,7 +153,7 @@ export default function Footer() {
             {/* Services */}
             <div>
               <h3 className="text-xl font-cairo font-bold mb-6 text-white">
-                {language === 'ar' ? 'خدماتنا' : 'Our Services'}
+                {language === "ar" ? "خدماتنا" : "Our Services"}
               </h3>
               <ul className="space-y-3">
                 {footerLinks.services.map((link, index) => (
@@ -160,7 +173,7 @@ export default function Footer() {
             {/* Support & Social */}
             <div>
               <h3 className="text-xl font-cairo font-bold mb-6 text-white">
-                {language === 'ar' ? 'الدعم' : 'Support'}
+                {language === "ar" ? "الدعم" : "Support"}
               </h3>
               <ul className="space-y-3 mb-8">
                 {footerLinks.support.map((link, index) => (
@@ -179,7 +192,7 @@ export default function Footer() {
               {/* Social Media */}
               <div>
                 <h4 className="text-lg font-cairo font-semibold mb-4 text-white">
-                  {language === 'ar' ? 'تابعنا' : 'Follow Us'}
+                  {language === "ar" ? "تابعنا" : "Follow Us"}
                 </h4>
                 <div className="flex space-x-4 rtl:space-x-reverse">
                   {socialLinks.map((social, index) => (
@@ -198,17 +211,17 @@ export default function Footer() {
           </div>
         </div>
 
-     
-
         {/* Bottom Section */}
         <div className="border-t border-white/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              
               {/* Copyright */}
               <div className="text-white/80 font-cairo text-sm mb-4 md:mb-0">
-                © {currentYear} {language === 'ar' ? 'ألفا  أوإمكيو' : 'Kingdom Depth'}. 
-                {language === 'ar' ? ' جميع الحقوق محفوظة' : ' All rights reserved'}
+                © {currentYear}{" "}
+                {language === "ar" ? "ألفا  أوإمكيو" : "Kingdom Depth"}.
+                {language === "ar"
+                  ? " جميع الحقوق محفوظة"
+                  : " All rights reserved"}
               </div>
 
               {/* Certifications */}
@@ -216,19 +229,19 @@ export default function Footer() {
                 <div className="flex items-center space-x-2 rtl:space-x-reverse text-white/80">
                   <Shield className="w-5 h-5 text-[#B9EAF2]" />
                   <span className="font-cairo text-sm">
-                    {language === 'ar' ? 'معتمد' : 'Certified'}
+                    {language === "ar" ? "معتمد" : "Certified"}
                   </span>
                 </div>
                 <div className="flex items-center space-x-2 rtl:space-x-reverse text-white/80">
                   <Anchor className="w-5 h-5 text-[#B9EAF2]" />
                   <span className="font-cairo text-sm">
-                    {language === 'ar' ? 'آمن' : 'Secure'}
+                    {language === "ar" ? "آمن" : "Secure"}
                   </span>
                 </div>
                 <div className="flex items-center space-x-2 rtl:space-x-reverse text-white/80">
                   <Waves className="w-5 h-5 text-[#B9EAF2]" />
                   <span className="font-cairo text-sm">
-                    {language === 'ar' ? 'موثوق' : 'Reliable'}
+                    {language === "ar" ? "موثوق" : "Reliable"}
                   </span>
                 </div>
               </div>
@@ -237,5 +250,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
