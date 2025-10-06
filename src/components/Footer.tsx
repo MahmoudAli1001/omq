@@ -218,10 +218,21 @@ export default function Footer() {
               {/* Copyright */}
               <div className="text-white/80 font-cairo text-sm mb-4 md:mb-0">
                 © {currentYear}{" "}
-                {language === "ar" ? "ألفا  أوإمكيو" : "Kingdom Depth"}.
+                {language === "ar" ? "ألفا  أوإمكيو" : "Alpha OMQ"}.
                 {language === "ar"
                   ? " جميع الحقوق محفوظة"
                   : " All rights reserved"}
+              </div>
+
+              {/* Developed by */}
+              <div className="text-white/80 font-cairo text-sm mb-4 md:mb-0">
+                {language === "ar" ? "تطوير بواسطة" : "Developed by"}{" "}
+                <Link
+                  href="https://shimaamohamed.bio.link/"
+                  className="text-[#B9EAF2] hover:underline"
+                >
+                  Soft Masters
+                </Link>
               </div>
 
               {/* Certifications */}

@@ -301,7 +301,7 @@
 //               لماذا تختار ألفا  أوإمكيو؟
 //             </h2>
 //             <p className="text-xl text-gray-600 font-inter">
-//               Why Choose Kingdom Depth?
+//               Why Choose Alpha OMQ?
 //             </p>
 //           </div>
 

@@ -247,7 +247,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl  font-cairo font-bold font-cairo text-[#12255b] md:leading-tight">
               {language === "ar"
                 ? "لماذا تختار ألفا  أوإمكيو؟"
-                : "Why Choose Kingdom Depth?"}
+                : "Why Choose Alpha OMQ?"}
             </h2>
             <p className="mt-1 text-neutral-400 font-cairo">
               {language === "ar"

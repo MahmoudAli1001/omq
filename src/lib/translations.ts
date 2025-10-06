@@ -147,7 +147,7 @@ export const translations: Record<Language, Translations> = {
     },
     features: {
       title: 'لماذا تختار ألفا  أوإمكيو؟',
-      subtitle: 'Why Choose Kingdom Depth?',
+      subtitle: 'Why Choose Alpha OMQ?',
       items: [
         'خدمات آمنة ومستدامة',
         'كفاءات محلية متخصصة',
@@ -171,7 +171,7 @@ export const translations: Record<Language, Translations> = {
     },
     common: {
       whyChooseUs: 'لماذا تختار ألفا  أوإمكيو؟',
-      whyChooseUsEn: 'Why Choose Kingdom Depth?',
+      whyChooseUsEn: 'Why Choose Alpha OMQ?',
       readyToServe: 'مستعدون لخدمتكم',
       readyToServeEn: 'Ready to Serve You',
     },
@@ -231,7 +231,7 @@ export const translations: Record<Language, Translations> = {
       viewAllServices: 'View All Services',
     },
     features: {
-      title: 'Why Choose Kingdom Depth?',
+      title: 'Why Choose Alpha OMQ?',
       subtitle: 'لماذا تختار ألفا  أوإمكيو؟',
       items: [
         'Safe and sustainable services',
@@ -255,7 +255,7 @@ export const translations: Record<Language, Translations> = {
       browseProducts: 'Browse Products',
     },
     common: {
-      whyChooseUs: 'Why Choose Kingdom Depth?',
+      whyChooseUs: 'Why Choose Alpha OMQ?',
       whyChooseUsEn: 'لماذا تختار ألفا  أوإمكيو؟',
       readyToServe: 'Ready to Serve You',
       readyToServeEn: 'مستعدون لخدمتكم',

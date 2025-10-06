@@ -1,4 +1,4 @@
-# ألفا  أوإمكيو - Kingdom Depth (OMQ)
+# ألفا  أوإمكيو - Alpha OMQ (OMQ)
 
 ## نظرة عامة
 
