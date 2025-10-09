@@ -45,11 +45,11 @@ export default function Navbar() {
     rounded-lg"
           >
             <Image
-              src={language === "ar" ? "/logo-ar.png" : "/logo-en.png"}
+              src={"/logo-en-trans.png"}
               alt="OMQ"
               className="rounded-lg"
-              width={80}
-              height={100}
+              width={200}
+              height={140}
             />
           </div>
           {/* <Link href="/" className=" rounded-lg">
